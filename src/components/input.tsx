@@ -13,6 +13,7 @@ const input = () => {
   //テキスト消去
   function clearText() {
     setValue('')
+    setDisplayCount(0)
   }
 
   //スタイルの変更
