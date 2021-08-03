@@ -10,6 +10,11 @@ const input = () => {
     setDisplayCount(replacedString.length)
   }
 
+  //テキスト消去
+  function clearText() {
+    setValue('')
+  }
+
   //スタイルの変更
   const [style, setStyle] = useState('serif')
   function changeFont(font) {
@@ -48,8 +53,11 @@ const input = () => {
           <option value="xl">xl</option>
           <option value="xl">2xl</option>
         </select>
-        <button className="px-4 ml-auto border-b border-black outline-none cursor-pointer hover:bg-gray-100 active:font-bold focus:outline-none">
-          save text
+        <button
+          className="px-4 ml-auto border-b border-black outline-none cursor-pointer hover:bg-gray-100 active:bg-gray-200 rounded-md focus:outline-none shadow-md"
+          onClick={clearText}
+        >
+          clear text
         </button>
       </div>
 
@@ -58,7 +66,7 @@ const input = () => {
           id="input"
           value={value}
           onChange={(e) => textCount(e.target.value)}
-          className={`font-${style} text-${size} p-2 block w-3/4 h-full mx-auto mt-6 outline-none resize-none wd:w-1/3 border border-black rounded-lg`}
+          className={`font-${style} text-${size} p-2 block w-3/4 h-full mx-auto mt-4 outline-none resize-none wd:w-1/3 border border-black rounded-lg`}
           autoFocus={true}
         ></textarea>
       </div>
