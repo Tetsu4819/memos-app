@@ -1,5 +1,15 @@
+import Head from 'next/head'
+import Input from '../components/input'
+
 export default function Home() {
   return (
-    <h1 className="text-6xl text-blue-600 text-center my-16">HelloNext!</h1>
+    <>
+      <Head>
+        <title>memo-app</title>
+      </Head>
+      <div className="h-screen">
+        <Input />
+      </div>
+    </>
   )
 }
