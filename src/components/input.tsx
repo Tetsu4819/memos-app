@@ -1,4 +1,5 @@
 import { useState } from 'react'
+const preventPurge = ['text-md', 'text-lg', 'text-xl', 'text-2xl']
 
 export default function Input() {
   //文字カウント
@@ -37,7 +38,7 @@ export default function Input() {
         <p>font</p>
         <select
           name="font select"
-          className="ml-2 outline-none border border-gray-500 rounded "
+          className="ml-2 border border-gray-500 rounded outline-none "
           onChange={(e) => changeFont(e.target.value)}
         >
           <option value="serif">serif</option>
@@ -46,15 +47,16 @@ export default function Input() {
         <p className="ml-4">size</p>
         <select
           name="size select"
-          className="ml-2 outline-none border border-gray-500 rounded "
+          className="ml-2 border border-gray-500 rounded outline-none "
           onChange={(e) => changeSize(e.target.value)}
         >
           <option value="md">md</option>
           <option value="lg">lg</option>
           <option value="xl">xl</option>
+          <option value="2xl">2xl</option>
         </select>
         <button
-          className="px-4 ml-auto border-b border-black outline-none cursor-pointer hover:bg-gray-100 active:bg-gray-200 rounded-md focus:outline-none shadow-md"
+          className="px-4 ml-auto border-b border-black rounded-md shadow-md outline-none cursor-pointer hover:bg-gray-100 active:bg-gray-200 focus:outline-none"
           onClick={clearText}
         >
           clear text
