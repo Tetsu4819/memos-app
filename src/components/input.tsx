@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function input() {
+export default function Input() {
   //文字カウント
   const [value, setValue] = useState('')
   const [displayCount, setDisplayCount] = useState(0)
