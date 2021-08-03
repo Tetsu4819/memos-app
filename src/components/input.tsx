@@ -25,7 +25,7 @@ export default function Input() {
   //フォントサイズの変更
   const [size, setSize] = useState('md')
   function changeSize(size) {
-    setStyle(size)
+    setSize(size)
   }
 
   return (
@@ -47,12 +47,11 @@ export default function Input() {
         <select
           name="size select"
           className="ml-2 outline-none border border-gray-500 rounded "
-          onChange={(e) => changeFont(e.target.value)}
+          onChange={(e) => changeSize(e.target.value)}
         >
           <option value="md">md</option>
           <option value="lg">lg</option>
           <option value="xl">xl</option>
-          <option value="xl">2xl</option>
         </select>
         <button
           className="px-4 ml-auto border-b border-black outline-none cursor-pointer hover:bg-gray-100 active:bg-gray-200 rounded-md focus:outline-none shadow-md"
