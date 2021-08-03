@@ -9,13 +9,48 @@ const input = () => {
     let replacedString = text.replace(/\s+/g, '')
     setDisplayCount(replacedString.length)
   }
+
+  //スタイルの変更
+  const [style, setStyle] = useState('serif')
+  function changeFont(font) {
+    setStyle(font)
+  }
+
+  //フォントサイズの変更
+  const [size, setSize] = useState('md')
+  function changeSize(size) {
+    setStyle(size)
+  }
+
   return (
     <div className="w-full h-full ">
-      <div className="block w-3/4 pt-6 mx-auto font-serif text-xl text-right ">
-        <button className="px-4 bg-white border-b border-black outline-none cursor-pointer hover:bg-gray-100 active:font-bold focus:outline-none">
-          Clear
+      <p className="block w-3/4 pt-6 mx-auto font-serif text-xl text-right ">
+        Count：{displayCount}
+      </p>
+      <div className="flex w-3/4 pt-2 mx-auto font-serif">
+        <p>font</p>
+        <select
+          name="font select"
+          className="ml-2 outline-none border border-gray-500 rounded "
+          onChange={(e) => changeFont(e.target.value)}
+        >
+          <option value="serif">serif</option>
+          <option value="sans">sans</option>
+        </select>
+        <p className="ml-4">size</p>
+        <select
+          name="size select"
+          className="ml-2 outline-none border border-gray-500 rounded "
+          onChange={(e) => changeFont(e.target.value)}
+        >
+          <option value="md">md</option>
+          <option value="lg">lg</option>
+          <option value="xl">xl</option>
+          <option value="xl">2xl</option>
+        </select>
+        <button className="px-4 ml-auto border-b border-black outline-none cursor-pointer hover:bg-gray-100 active:font-bold focus:outline-none">
+          save text
         </button>
-        <p>Count：{displayCount}</p>
       </div>
 
       <div className="h-4/5">
@@ -23,7 +58,7 @@ const input = () => {
           id="input"
           value={value}
           onChange={(e) => textCount(e.target.value)}
-          className="p-2 block w-3/4 h-full mx-auto mt-6 outline-none resize-none wd:w-1/3 border border-black rounded-lg"
+          className={`font-${style} text-${size} p-2 block w-3/4 h-full mx-auto mt-6 outline-none resize-none wd:w-1/3 border border-black rounded-lg`}
           autoFocus={true}
         ></textarea>
       </div>
