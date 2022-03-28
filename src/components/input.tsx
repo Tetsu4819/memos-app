@@ -1,31 +1,31 @@
 import { useState } from 'react'
 const preventPurge = ['text-md', 'text-lg', 'text-xl', 'text-2xl']
 
-export default function Input() {
+export const Input = () => {
   //文字カウント
   const [value, setValue] = useState('')
   const [displayCount, setDisplayCount] = useState(0)
-  function textCount(text: string) {
+  const textCount = (text: string) => {
     setValue(text)
     let replacedString = text.replace(/\s+/g, '')
     setDisplayCount(replacedString.length)
   }
 
   //テキスト消去
-  function clearText() {
+  const clearText = () => {
     setValue('')
     setDisplayCount(0)
   }
 
   //スタイルの変更
   const [style, setStyle] = useState('serif')
-  function changeFont(font) {
+  const changeFont = (font) => {
     setStyle(font)
   }
 
   //フォントサイズの変更
   const [size, setSize] = useState('md')
-  function changeSize(size) {
+  const changeSize = (size) => {
     setSize(size)
   }
 
